@@ -1,9 +1,5 @@
 """
-Jamaican Rural Road Network - Standalone Graphical User Interface
-GUI implementation using Tkinter for the pathfinding system
-
-This is a standalone version that includes all necessary components.
-No need to run CLI first - just run this file directly!
+Jamaican Rural Road Network
 """
 
 import tkinter as tk
@@ -36,7 +32,7 @@ class JamaicaRoadNetwork:
             self.prolog.consult(self.prolog_file)
             print(f"✓ Loaded Prolog knowledge base: {self.prolog_file}")
         else:
-            print(f"⚠ Warning: {self.prolog_file} not found. Creating new file...")
+            print(f"Warning: {self.prolog_file} not found. Creating new file...")
             self.create_default_network()
     
     def create_default_network(self):
@@ -204,7 +200,7 @@ safe_dijkstra([Current|Queue], End, AvoidCondition, Path, Distance) :-
         with open(self.prolog_file, 'w') as f:
             f.write(default_data)
         self.prolog.consult(self.prolog_file)
-        print("✓ Created default network with sample Jamaican locations")
+        print("Created default network with sample Jamaican locations")
     
     def get_all_locations(self) -> List[str]:
         """Retrieve all unique locations from the network."""
@@ -1005,10 +1001,6 @@ def main():
     # Show splash screen with instructions
     splash_text = """
     🇯🇲 Jamaican Rural Road Network Pathfinding System
-    
-    Standalone GUI Application
-    
-    This application runs independently - no CLI needed!
     
     Requirements:
     • Python 3.8+
